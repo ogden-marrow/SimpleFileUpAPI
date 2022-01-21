@@ -26,5 +26,5 @@ app.post('/handle', (request, response) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://45.79.216.143:${port}`);
 });
