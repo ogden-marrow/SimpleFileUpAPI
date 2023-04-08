@@ -1,30 +1,28 @@
-const express = require('express');
-const utilits = require('./src/utilits.js');
+const express = require("express");
+const path = require("path");
+
+
+
+const PORT = 3000;
+
 const app = express();
-app.use(express.json());
-const port = process.env.PORT || 3000;
 
-app.get('/api', (req, res) => {
-  res.send(
-    {
-      message: 'Hello World!',
-      status: 'OK',
-      data: {
-        name: 'John',
-        age: '25',
-      },
-      test: 'test'
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.post('/upload',
+    (req, res) => {
+        let tttt = req;
+        console.log(tttt);
+        return res.json({ status: 'success', message: "done" });
     }
-  );
-});
+);
 
-app.post('/handle', (request, response) => {
-  log('handle', request.body);
-  //code to perform particular action.
-  //To access POST variable use req.body()methods.
-  response.send("OK");
-});
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://45.79.216.143:${port}`);
-});
+
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// this i a test to see the cool estidic of the temial interface omg like yes daddy this is so dope.
+
+

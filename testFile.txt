@@ -1,0 +1,1 @@
+This is a test file that will be set to the server. After running `node server.js' and then in another seminal running `node postSend.js' you should see a new file in this dir called `ItWorked.txt'
